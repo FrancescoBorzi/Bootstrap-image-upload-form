@@ -36,7 +36,7 @@ if ( isset($_FILES["file"]["type"]) )
 
           echo "<div class=\"alert alert-success\" role=\"alert\">";
           echo "<p>Image uploaded successful</p>";
-          echo "<p>File Name: <a href=". $targetPath . "<strong>" . $targetPath . "</strong></p>";
+          echo "<p>File Name: <a href=\"". $targetPath . "\"><strong>" . $targetPath . "</strong></a></p>";
           echo "<p>Type: <strong>" . $_FILES["file"]["type"] . "</strong></p>";
           echo "<p>Size: <strong>" . round($_FILES["file"]["size"]/1024, 2) . " kB</strong></p>";
           echo "<p>Temp file: <strong>" . $_FILES["file"]["tmp_name"] . "</strong></p>";
