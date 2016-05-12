@@ -1,3 +1,20 @@
+/*jslint browser: true, white: true, eqeq: true, plusplus: true, sloppy: true, vars: true*/
+/*global $, console, alert, FormData, FileReader*/
+
+
+function noPreview() {
+  $('#image-preview-div').css("display", "none");
+  $('#preview-img').attr('src', 'noimage');
+  $('upload-button').attr('disabled', '');
+}
+
+function selectImage(e) {
+  $('#file').css("color", "green");
+  $('#image-preview-div').css("display", "block");
+  $('#preview-img').attr('src', e.target.result);
+  $('#preview-img').css('max-width', '550px');
+}
+
 $(document).ready(function (e) {
 
   var maxsize = 500 * 1024; // 500 KB
@@ -59,18 +76,5 @@ $(document).ready(function (e) {
     reader.readAsDataURL(this.files[0]);
 
   });
-
-  function noPreview() {
-    $('#image-preview-div').css("display", "none");
-    $('#preview-img').attr('src', 'noimage');
-    $('upload-button').attr('disabled', '');
-  };
-
-  function selectImage(e) {
-    $('#file').css("color", "green");
-    $('#image-preview-div').css("display", "block");
-    $('#preview-img').attr('src', e.target.result);
-    $('#preview-img').css('max-width', '550px');
-  };
 
 });
